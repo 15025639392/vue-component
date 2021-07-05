@@ -32,12 +32,13 @@
                 path: 'packages/{{name}}/stories/{{name}}.stories.js',
                 templateFile: 'plop-template/component/stories/component.stories.hbs'
             },
+            
             {
                 type:'add',
                 path: 'packages/{{name}}/index.js',
                 templateFile: 'plop-template/component/index.hbs'
             },
-            
+
             {
                 type:'add',
                 path: 'packages/{{name}}/README.md',
