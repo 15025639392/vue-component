@@ -48,6 +48,11 @@
                 type:'add',
                 path: 'packages/{{name}}/LICENSE',
                 templateFile: 'plop-template/component/LICENSE'
+            },
+            {
+                type:'add',
+                path: 'packages/{{name}}/package.json',
+                templateFile: 'plop-template/component/package.hbs'
             }
         ]
     })
