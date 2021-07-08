@@ -19,8 +19,8 @@
         actions:[
             {
                 type:'add',
-                path: 'packages/{{name}}/src/{{name}}.vue',
-                templateFile: 'plop-template/component/src/component.hbs'
+                path: 'packages/{{name}}/demos/{{name}}.vue',
+                templateFile: 'plop-template/component/demos/component.hbs'
             },
             {
                 type:'add',
@@ -53,6 +53,11 @@
                 type:'add',
                 path: 'packages/{{name}}/package.json',
                 templateFile: 'plop-template/component/package.hbs'
+            },
+            {
+                type:'add',
+                path: 'packages/{{name}}/src/index.js',
+                templateFile: 'plop-template/component/src/index.hbs'
             }
         ]
     })

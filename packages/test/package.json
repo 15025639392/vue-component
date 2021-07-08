@@ -1,7 +1,7 @@
 {
-  "name": "xz-{{name}}",
+  "name": "xz-test",
   "version": "1.0.0",
-  "description": "xz-{{name}} component",
+  "description": "xz-test component",
   "author": "ldy",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
