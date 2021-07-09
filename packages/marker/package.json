@@ -1,7 +1,7 @@
 {
-  "name": "xz-test3",
+  "name": "xz-marker",
   "version": "1.0.0",
-  "description": "xz-test3 component",
+  "description": "xz-marker component",
   "author": "ldy",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
