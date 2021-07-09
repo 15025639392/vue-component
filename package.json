@@ -12,7 +12,7 @@
     "build": "cross-env NODE_ENV=production rollup -c",
     "build:dev": "rollup -c",
     "doc": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build:doc": "build-storybook"
   },
   "main": "index.js",
   "dependencies": {
