@@ -24,3 +24,10 @@ yarn build:doc // 构建release文档
 ```sh
 vue serve test.vue
 ```
+
+### 测试
+
+- 目录：eg:/packages/test/demos/_tests_
+- 所有测试文件存放在 _tests_/*.js
+- 在_tests_/*.js文件里面编写测试用例
+- 注：测试用例一般用于 输入/输出 测试
