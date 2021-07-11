@@ -9,12 +9,13 @@ import TileLayer from 'ol/layer/Tile';
 import XYZ from 'ol/source/XYZ';
 import View from 'ol/View';
 import Marker from '../index'
-
+import VectorLayer from '../../vectorLayer';
 export default {
     name:'XzMap',
     mounted(){
       const tian_di_tu_satellite_layer = new TileLayer({
         title: "天地图卫星影像",
+        preload: Infinity,
         source: new XYZ({
             url: 'https://t3.tianditu.gov.cn/DataServer?T=img_w&X={x}&Y={y}&L={z}&tk=e67b6383a8f8d5826792cdb19f302c71'
         })
@@ -27,18 +28,21 @@ export default {
           zoom: 2,
         }),
       });
-
-      new Marker([0, 0],{
+      const Layer = new VectorLayer().addTo(map)
+      const marker = new Marker([0, 0],{
           'id' : 'marker0',
           'symbol' : {
-              'markerFile': 'https://openlayers.org/en/latest/examples/data/icon.png',
-              // 'markerWidth' : 20,
+              'markerFile': 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+              'markerWidth' : 20,
               // 'markerHeight': 20,
           },
           'properties' : {
               'foo' : 'value'
           }
-      }).addTo(map)
+      }).addTo(Layer)
+
+
+      marker.updatePoint([-100,100])
     }
 }
 </script>

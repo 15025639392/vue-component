@@ -2,7 +2,7 @@
 /**
  * 
  * @param {*} plop 
- * @type { import('./node_modules/plop/src/plop') }
+ * @type { import('plop') }
  */
 
  module.exports = plop =>{

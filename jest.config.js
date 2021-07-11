@@ -1,0 +1,12 @@
+module.exoprts={
+	"testMatch":["**/_tests_/**/*.js"],
+    "moduleFileExtensions":[
+        "js",
+        "json",
+        "vue"
+    ],
+    "transform":{
+        ".*\\.vue$":"vue-jest",
+        ".*\\.js$":"babel-jest"
+    }
+}

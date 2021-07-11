@@ -1,3 +1,3 @@
-import XzMarker from './src/index.js'
+import Marker from './src/index.js'
 
-export default XzMarker
+export default {Marker}
