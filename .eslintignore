@@ -1,0 +1,10 @@
+build/*.js
+src/assets
+public
+dist
+jest.config.js
+generate.packages.js
+plopfile.js
+.eslintrc.js
+packages/**/*.vue
+

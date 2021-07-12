@@ -1,0 +1,13 @@
+{
+  "name": "xz-layers",
+  "version": "0.0.0",
+  "description": "xz-layers component",
+  "author": "54yan",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "./index.js",
+  "keywords": [],
+  "license": "ISC"
+}

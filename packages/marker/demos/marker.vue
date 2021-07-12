@@ -8,7 +8,7 @@ import 'ol/ol.css';
 import TileLayer from 'ol/layer/Tile';
 import XYZ from 'ol/source/XYZ';
 import View from 'ol/View';
-import Marker from '../index'
+import {Marker} from '../index'
 import VectorLayer from '../../vectorLayer';
 export default {
     name:'XzMap',
@@ -40,8 +40,6 @@ export default {
               'foo' : 'value'
           }
       }).addTo(Layer)
-
-
       marker.updatePoint([-100,100])
     }
 }

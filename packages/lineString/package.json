@@ -1,0 +1,16 @@
+{
+  "name": "xz-line-string",
+  "version": "1.0.0",
+  "description": "xz-line-string component",
+  "author": "ldy",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "ol": "^6.5.0"
+  }
+}

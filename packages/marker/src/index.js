@@ -1,8 +1,7 @@
 import {Feature} from 'ol';
 import {Icon, Style} from 'ol/style';
 import Point from 'ol/geom/Point';
-import VectorSource from 'ol/source/Vector';
-import {extend} from '../../utils/index';
+import {extend,updatePoint} from '../../utils/index';
 import {fromLonLat} from 'ol/proj';
 const options = {
     'symbol': {
@@ -23,7 +22,6 @@ const options = {
 // TODO 监听属性变化，派发更新
 class XzMarker{
     #feature
-    vectorSource=[]
     constructor(coordinates,opts){
         if(!coordinates){
             console.warn('请传入coordinates')
@@ -52,7 +50,7 @@ class XzMarker{
      * @memberof XzMarker
      */
     updatePoint(coordinates){
-        this.#feature.setGeometry(new Point(fromLonLat([103.22,34.23])))
+        updatePoint.call(this.#feature,coordinates)
     }
     _setPrjCoordinates(coordinates){
         this.updatePoint(coordinates)

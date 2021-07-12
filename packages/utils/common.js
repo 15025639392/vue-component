@@ -144,3 +144,67 @@ export function toRadian(d) {
 export function toDegree(r) {
     return r / pi;
 }
+
+export function isArray(opt) {
+    return Array.isArray(opt)
+}
+
+// 经纬度(EPSG:4326)转换EPSG:3857
+export function lonLatToMercator(lonlat){
+    const isArr = isArray(lonlat)
+    let temp = isArr?{
+        lng:lonlat[0],
+        lat:lonlat[1]
+    }:{
+        lng:lonlat.x,
+        lat:lonlat.y
+    }
+    const mercator = {
+		x:0,
+    	y:0
+	};
+    const earthRad = 6378137.0;
+    mercator.x = temp.lng * Math.PI / 180 * earthRad;
+    const a = temp.lat * Math.PI / 180;
+    mercator.y = earthRad / 2 * Math.log((1.0 + Math.sin(a)) / (1.0 - Math.sin(a)));
+    return isArr?[mercator.x,mercator.y]:mercator;
+}
+
+// EPSG:3857转换经纬度(EPSG:4326)
+export function mercatorTolonlat(mercator){
+    const lonlat={
+    	x:0,
+    	y:0
+    };
+    let x = mercator.x/20037508.34*180;
+    let y = mercator.y/20037508.34*180;
+    y = 180/Math.PI*(2*Math.atan(Math.exp(y*Math.PI/180))-Math.PI/2);
+    lonlat.x = x;
+    lonlat.y = y;
+    return lonlat;
+}
+
+export function transformLonlatArray(list){
+    return list.map(lonLatToMercator)
+}
+
+// 颜色转化
+export function getRgba(color, op) {
+    if (isNull(op)) {
+        op = 1;
+    }
+    if (color[0] !== '#') {
+        return color;
+    }
+    let r, g, b;
+    if (color.length === 7) {
+        r = parseInt(color.substring(1, 3), 16);
+        g = parseInt(color.substring(3, 5), 16);
+        b = parseInt(color.substring(5, 7), 16);
+    } else {
+        r = parseInt(color.substring(1, 2), 16) * 17;
+        g = parseInt(color.substring(2, 3), 16) * 17;
+        b = parseInt(color.substring(3, 4), 16) * 17;
+    }
+    return 'rgba(' + r + ',' + g + ',' + b + ',' + op + ')';
+}

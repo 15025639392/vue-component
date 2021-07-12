@@ -2,7 +2,7 @@
   "name": "xz-utils",
   "version": "1.0.0",
   "description": "xz-utils component",
-  "author": "ldy",
+  "author": "54yan",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
